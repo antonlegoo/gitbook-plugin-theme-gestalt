@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-theme-gestalt",
-  "description": "Custom theme for GitBook",
+  "description": "A configurable theme for GitBook",
   "main": "./index.js",
   "version": "1.0.0",
   "engines": {
