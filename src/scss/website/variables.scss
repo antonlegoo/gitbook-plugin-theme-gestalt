@@ -1,0 +1,179 @@
+
+
+
+
+$color-border						: rgba(0, 0, 0, 0.07) !default;
+$color-primary 						: #39b1cb;
+
+
+
+
+$color-text 						: #262626;
+
+
+
+
+
+// Body
+$body-background:                     white !default;
+
+
+
+
+
+$staticPath: "." !default;
+$FontPath:                            '#{$staticPath}/fonts' !default;
+$fa-font-path:                        "#{$FontPath}/fontawesome" !default;
+
+// Font sizes
+$font-size-base:          14px !default;
+$font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
+$font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
+$line-height-base:        1.428571429 !default; // 20/14
+$line-height-computed:    floor($font-size-base * $line-height-base) !default;
+
+// Fonts
+$font-family-serif:                   Georgia, serif !default;
+$font-family-sans:                    "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base:                    $font-family-sans !default;
+$headings-font-family:                inherit !default;
+
+
+
+$s-font-size:                         1.2rem !default;
+$m-font-size:                         1.4rem !default;
+$l-font-size:                         1.6rem !default;
+$xl-font-size:                        2.2rem !default;
+$xxl-font-size:                       4.0rem !default;
+$default-font-size:                   $l-font-size !default;
+
+
+
+
+// Page
+$page-color:                          black !default;
+$page-background:                     $body-background !default;
+
+// Content
+$content-line-height:                 1.7 !default;
+$content-color:                       #333333 !default;
+
+
+
+// Sizes
+$mobileMaxWidth:                      1240px !default;
+
+// Header
+$header-height:                       50px !default;
+$header-color:                        hsl(194, 5%, 52%) !default;
+$header-background:                   transparent !default;
+$header-border:                       rgba(0, 0, 0, 0.07) !default;
+$header-button-color:                 #ccc !default;
+$header-button-hover-color:           #444 !default;
+$header-button-hover-background:      none !default;
+
+// Navigation
+$navigation-color:                    $header-button-color !default;
+$navigation-hover-color:              $header-button-hover-color !default;
+
+
+
+
+
+
+
+
+
+
+// 	*******************************************************
+// 	## Sidebar
+// 	*******************************************************
+
+// The width of the entire sidebar
+$sidebar-width						: 300px !default;
+// Breakpoint to target mobile styling
+$sidebar-breakpoint					: 600px !default;
+// Amount of time the sidebar animates when toggled
+$sidebar-transition-duration		: 250ms !default;
+
+// The increment of padding used throughout the sidebar
+$sidebar-padding-unit               : 10px;
+// The amount of horizontal padding for each section of the sidebar
+$sidebar-padding-h 					: $sidebar-padding-unit * 1.5;
+// The amount of vertical padding for each section of the sidebar
+$sidebar-padding-v 					: $sidebar-padding-unit * 2;
+
+// The text color of the sidebar
+$sidebar-color 						: hsl(207, 15%, 25%) !default;
+// The background color of the sidebar
+$sidebar-background 				: #fafafa !default;
+// The color of right border of the entire sidebar
+$sidebar-border-right 				: 1px solid $header-border !default;
+
+// The height of the logo in the sidebar
+$sidebar-logo-height                : 20px !default;
+
+// The amount of indentation for each level of nav links
+$sidebar-nested-padding 			: $sidebar-padding-unit !default;
+// Hides/shows nested levels when not active
+$sidebar-show-nested-levels 		: false;
+// The vertical padding between links
+$sidebar-link-padding-v 			: $sidebar-padding-unit !default;
+// The horizontal padding on the sides of links
+$sidebar-link-padding-h 			: 0 !default;
+
+// Sidebar link headers styling
+$sidebar-header-map					: (
+										color: #939da3,
+										text-transform: uppercase
+									) !default;
+// Headers that are parent to current page
+$sidebar-header-selected-map		: ( color: $color-primary ) !default;
+
+// Sidebar link styling
+$sidebar-link-map					: ( color: $color-text ) !default;
+// Sidebar link hover styling
+$sidebar-link-hover-map				: (
+										color: $color-primary,
+									    text-decoration: none
+									) !default;
+// Links that are parent to current page
+$sidebar-link-selected-map			: ( font-weight: bold ) !default;
+
+// Sidebar dividers styling
+$sidebar-divider-map				: ( background: $color-border ) !default;
+
+
+
+
+
+
+
+
+
+// Search
+$search-padding-default 			: 1.5rem !default;
+$search-results-opacity 			: 1 !default;
+$search-highlight-color 			: rgba(255, 220, 0, 0.4) !default;
+
+
+// Dropdown
+$dropdown-zindex 					: 100 !default;
+$dropdown-divider-color 			: $color-border !default;
+$dropdown-background 				: $sidebar-background !default;
+$dropdown-button-color 				: darken($header-button-color, 15%) !default;
+$dropdown-border-color 				: $color-border !default;
+$dropdown-button-hover-color 		: $header-button-hover-color !default;
+
+// Buttons
+$button-background 					: #eee !default;
+$button-color 						: #666 !default;
+$button-hover-color 				: #444 !default;
+
+// Border Radius
+$border-radius-base 				: 1px !default;
+$border-radius-large 				: 3px !default;
+$border-radius-small 				: 1px !default;
+
+
+
