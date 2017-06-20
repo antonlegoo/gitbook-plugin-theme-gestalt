@@ -25,12 +25,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GitbookIO/theme-default.git"
+    "url": "https://github.com/antonlegoo/gitbook-plugin-theme-gestalt"
   },
   "author": "Anton Legoo <azeven@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/GitbookIO/theme-default/issues"
+    "url": "https://github.com/antonlegoo/gitbook-plugin-theme-gestalt/issues"
   },
   "gitbook": {
     "properties": {

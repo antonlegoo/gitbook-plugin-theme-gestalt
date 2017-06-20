@@ -1,6 +1,22 @@
 // 	# 	Book
 // 		Defines styles for the book's body
 
+//  *******************************************************
+//  ##  Variables
+//  *******************************************************
+
+//  The color of the book background
+$book-background                    : white !default;
+//  Styling for main book div
+$book-map                           : () !default;
+//  Styling for book body div
+$book-body-map                      : () !default;
+//  Styling for inner book div
+$book-inner-map                     : (
+                                        color: $color-text,
+                                        background: $book-background
+                                    ) !default;
+
 
 // 	*******************************************************
 // 	## 	Main book div
@@ -18,7 +34,7 @@
 
 .book.with-summary
 {
-    @media (max-width: $sidebar-breakpoint) { overflow: hidden; }
+    @media (max-width: $mobile-breakpoint) { overflow: hidden; }
 }
 
 // 	*******************************************************
@@ -34,13 +50,10 @@
     bottom: 0px;
     overflow-y: auto;
 
-    transition: left $sidebar-transition-duration ease;
-
     @include print( $book-body-map );
 
     @media (max-width: $mobileMaxWidth)
     {
-        transition: transform $sidebar-transition-duration ease;
         padding-bottom: 20px;
     }
 
@@ -48,8 +61,7 @@
 
     .book.with-summary &
     {
-        @media (max-width: $sidebar-breakpoint) { transform: translate( calc(100% - 60px), 0px ); }
-        @media (min-width: $sidebar-breakpoint) { left: $sidebar-width; }
+        @media (max-width: $mobile-breakpoint) { transform: translate( calc(100% - 60px), 0px ); }
     }
 }
 

@@ -1,4 +1,34 @@
-//  Defines styles for the book's header
+//  #   Header
+//      Defines styles for the book's header
+
+//  *******************************************************
+//  ##  Variables
+//  *******************************************************
+
+//  ### Header styling
+//  The height of the header
+$header-height                          : 50px !default;
+// Styling for the header div
+$header-map                             : (
+                                            padding: 0px $spacing-unit / 2,
+                                            color: $color-text,
+                                            background: transparent
+                                        ) !default;
+
+//  ### Header buttons
+// Styling for icon buttons
+$header-button-map                      : ( color: $color-button ) !default;
+// Styling for icon buttons on hover
+$header-button-hover-map                : ( color: $color-button-hover ) !default;
+
+//  ### Header title
+// Permanently hides/shows the title in the header
+$header-show-title                      : false !default;
+//  Styling for the title
+$header-title-map                       : (
+                                            font-size: 1.25rem,
+                                            font-weight: 200
+                                        ) !default;
 
 //  *******************************************************
 //  ## The header

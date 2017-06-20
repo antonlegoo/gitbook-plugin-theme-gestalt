@@ -73,7 +73,7 @@ gulp.task('sass', function() {
 
     console.log( "sassing" );
     // Compile
-    return  gulp.src('./src/scss/index.scss')
+    return  gulp.src('./src/scss/website.scss')
             .pipe( sass().on( 'error', sass.logError ) )
             .pipe(rename('style.css'))
             .pipe( gulp.dest( './_assets/website/' ) )

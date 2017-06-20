@@ -1,6 +1,19 @@
 //  #   Buttons             
 //      Defines syling for buttons
 
+//  *******************************************************
+//  ##  Variables
+//  *******************************************************
+
+//  Styling for buttons
+$button-map                         : (
+                                        padding: $spacing-unit $spacing-unit/2,
+                                        background: $color-gray-light,
+                                        color: $color-gray-dark
+                                    ) !default;
+//  Styling for buttons on hover
+$button-hover-map                   : ( color: $color-gray-darker ) !default;
+
 
 //  *******************************************************
 //  ##  Wrapper for multiple buttons

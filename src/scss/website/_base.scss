@@ -34,17 +34,3 @@ body
     -webkit-text-size-adjust: 100%;
 }
 
-//	*******************************************************
-// 	## Text
-//	*******************************************************
-
-a { @include print( $link-map ); }
-a:hover { @include print( $link-hover-map ); }
-
-//  ### Defintions for font sizes controlled by "Font Settings" dropdown in header
-
-.book.font-size-0 .book-body .page-inner section { font-size: $font-size-0; }
-.book.font-size-1 .book-body .page-inner section { font-size: $font-size-1; }
-.book.font-size-2 .book-body .page-inner section { font-size: $font-size-2; }
-.book.font-size-3 .book-body .page-inner section { font-size: $font-size-3; }
-.book.font-size-4 .book-body .page-inner section { font-size: $font-size-4; }

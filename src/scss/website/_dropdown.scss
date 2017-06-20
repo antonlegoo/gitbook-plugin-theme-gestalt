@@ -1,6 +1,18 @@
 //  #   Dropdown        
 //      Defines styling for dropdowns
 
+//  *******************************************************
+//  ##  Variables
+//  *******************************************************
+
+$dropdown-zindex                    : 100 !default;
+$dropdown-divider-color             : $color-border !default;
+$dropdown-background                : $sidebar-background !default;
+$dropdown-button-color              : darken($color-button, 15%) !default;
+$dropdown-border-color              : $color-border !default;
+$dropdown-button-hover-color        : $color-button-hover !default;
+$dropdown-border-radius             : 1px !default;
+
 
 //  *******************************************************
 //  ##  Dropdown div

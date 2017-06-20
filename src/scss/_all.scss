@@ -1,13 +1,9 @@
-// @import "_less-style-compiled.scss";
-
 @import "../../node_modules/font-awesome/scss/font-awesome.scss"; 
 
-@import "mixin";
-@import "website/variables";
+@import "mixins";
 
-@import "normalize";
-@import "base";
-
+@import "website/normalize";
+@import "website/base";
 @import "website/book";
 @import "website/page";
 @import "website/header";
