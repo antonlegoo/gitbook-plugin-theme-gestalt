@@ -16,7 +16,7 @@ $path-to-assets 					: "/assets" !default;
 
 // 	###	Brand colors
 // 	The primary accent color 
-$color-primary 						: #39b1cb !default;
+$color-primary 						: #ff4f4f !default;
 
 
 // 	###	Gray colors
@@ -82,9 +82,9 @@ $line-height-base 					: 1.5 !default;
 // 	###	Fonts
 $font-family-serif 					: Georgia, serif !default;
 $font-family-sans 					: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-mono 					: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$font-family-mono 					: Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
 $font-family-base                   : $font-family-sans !default;
-$font-family-headings              	: inherit !default;
+$font-family-headings              	: $font-family-serif !default;
 
 
 // 	###	Defintions for "Font Settings" dropdown in header
@@ -105,6 +105,7 @@ $heading-map 						: (
 										color: $color-headings, 
 										font-family: $font-family-headings
 									) !default;
+
 $heading-1-map						: map-merge( $heading-map, (font-size: $font-size-h1) ) !default;
 $heading-2-map						: map-merge( $heading-map, (font-size: $font-size-h2) ) !default;
 $heading-3-map						: map-merge( $heading-map, (font-size: $font-size-h3) ) !default;
@@ -124,13 +125,15 @@ $link-hover-map						: ( text-decoration: underline ) !default;
 
 
 // Styling for P elements
-$p-map								: () !default;
+$p-map								: ( line-height: $line-height-base ) !default;
+
 // Styling for HR elements
 $hr-map								: (
 										height: 4px,
 									    margin: $spacing-unit*3 0,
 									    background-color: $color-border
 									) !default;
+
 // Styling for BLOCKQUOTE elements
 $blockquote-map						: (
 										margin: 0 0 0 $spacing-unit,
@@ -146,6 +149,7 @@ $image-map							: ( max-width: 100% ) !default;
 
 // Styling for TABLE elements
 $table-map							: () !default;
+
 // Styling for TR elements
 $table-tr-map						: (
 										background-color: white,
@@ -153,12 +157,14 @@ $table-tr-map						: (
 									) !default;
 // Styling for even-numbered rows
 $table-tr-2-map						: ( background-color: $color-gray-lightest ) !default;
+
 // Styling for TD elements
 $table-td-map						: ( 
 										
 										padding: $spacing-unit/2 $spacing-unit,
 									    border: 1px solid $color-gray-lighter
 									) !default;
+
 // Styling for TH elements
 $table-th-map						: map-merge( $table-td-map, ( font-weight: bold ) ) !default;
 
@@ -176,11 +182,13 @@ $ol-map								: (
 								    ) !default;
 // Styling for nested OL elements
 $ol-ol-map							: ( list-style-type: lower-roman ) !default;
+
 // Styling for LI elements
 $li-map								: () !default;
 
 // Styling for dl
 $dl-map								: () !default;
+
 // Styling for dt
 $dt-map								: (
 										padding: 0,
@@ -348,7 +356,7 @@ $sidebar-logo-map					: (
 									) !default;
 
 // The height of the logo image
-$sidebar-logo-height                : 20px !default;
+$sidebar-logo-height                : 30px !default;
 
 
 
@@ -366,7 +374,8 @@ $sidebar-link-padding-h 			: 0 !default;
 // Sidebar link headers styling
 $sidebar-header-map					: (
 										color: #939da3,
-										text-transform: uppercase
+										text-transform: uppercase,
+										font-family: $font-family-headings
 									) !default;
 // Headers that are parent to currently active page
 $sidebar-header-selected-map		: ( color: $color-primary ) !default;
@@ -374,7 +383,10 @@ $sidebar-header-selected-map		: ( color: $color-primary ) !default;
 
 
 // Sidebar link styling
-$sidebar-link-map					: ( color: $color-text ) !default;
+$sidebar-link-map					: ( 
+										color: $color-text,
+										font-family: $font-family-base
+									) !default;
 // Sidebar link hover styling
 $sidebar-link-hover-map				: (
 										color: $color-primary,
@@ -387,23 +399,6 @@ $sidebar-link-selected-map			: ( font-weight: bold ) !default;
 
 // Sidebar dividers styling
 $sidebar-divider-map				: ( background: $color-border ) !default;
-
-
-
-
-
-
-
-
-
-// 	*******************************************************
-// 	## 	Search 			*
-// 		...
-// 	*******************************************************
-
-$search-padding-default 			: 1.5rem !default;
-$search-results-opacity 			: 1 !default;
-$search-highlight-color 			: rgba(255, 220, 0, 0.4) !default;
 
 
 // 	*******************************************************
@@ -432,5 +427,32 @@ $button-map							: (
 									) !default;
 // 	Styling for buttons on hover
 $button-hover-map					: ( color: $color-gray-darker ) !default;
+
+
+
+// 	*******************************************************
+// 	## 	Search 			*
+//      Styles search input and results, works in sync with the "search" plugin
+// 	*******************************************************
+
+
+// The wrapper div around the search input
+$search-input-wrapper-map           : ( 
+                                        background: #fff,
+                                        border-bottom: 1px solid $color-border
+                                    ) !default;
+// The input for search
+$search-input-map                   : (
+                                        background: transparent,
+                                        border: 1px solid transparent,
+                                        padding: $sidebar-padding-unit 0
+                                    ) !default;
+
+// Styles the page title for search results
+$search-results-title-map           : ( margin-bottom: 35px ) !default;
+// Styles the title for search result items
+$search-results-item-title-map      : () !default;
+// Styles the copy blurb for search result items
+$search-results-item-blurb-map      : () !default;
 
 

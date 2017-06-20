@@ -83,12 +83,12 @@ hr
 // 	## Headings
 //	*******************************************************
 
-h1  { font-size: $font-size-h1; }
-h2  { font-size: $font-size-h2; }
-h3  { font-size: $font-size-h3; }
-h4  { font-size: $font-size-h4; }
-h5  { font-size: $font-size-h5; }
-h6  { font-size: $font-size-h6; }
+h1  { @include print( $heading-1-map ); }
+h2  { @include print( $heading-2-map ); }
+h3  { @include print( $heading-3-map ); }
+h4  { @include print( $heading-4-map ); }
+h5  { @include print( $heading-5-map ); }
+h6  { @include print( $heading-6-map ); }
 
 
 //	*******************************************************
