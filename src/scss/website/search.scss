@@ -42,7 +42,7 @@
 
         .has-results {
             .search-results-item {
-                @include gitbook-markdown( $content-color, $content-line-height );
+                // @include gitbook-markdown( $content-color, $content-line-height );
             }
 
             .search-results-item h3 {

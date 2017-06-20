@@ -1,94 +1,87 @@
-$header-show-font-settings  : false;
-.font-settings { @if $header-show-font-settings == false { display: none; } }
+//  Defines styles for the book's header
 
-$header-show-title          : false;
-.book-header h1 { @if $header-show-title == false { display: none; } }
+//  *******************************************************
+//  ## The header
+//  *******************************************************
 
-
-
-.book-header {
+.book-header
+{
     font-family: $font-family-sans;
 
     overflow: visible;
     height: $header-height;
-    padding: 0px 8px;
     z-index: 2;
 
-    font-size: 0.85em;
-    color: $header-color;
-    background: $header-background;
-
-    .btn {
-        display: block;
-        height: $header-height;
-        padding: 0px 15px;
-        border-bottom: none;
-        color: $header-button-color;
-        text-transform: uppercase;
-        line-height: $header-height;
-        box-shadow: none !important;
-        position:relative;
-        font-size: $font-size-base;
-
-        &:hover {
-            position: relative;
-            text-decoration: none;
-            color: $header-button-hover-color;
-            background: $header-button-hover-background;
-        }
-
-        &:focus {
-            outline: none;
-        }
-    }
-
-    h1 {
-        margin: 0px;
-        font-size: 20px;
-        font-weight: 200;
-        text-align: center;
-        line-height: $header-height;
-        opacity: 0;
-        transition : opacity ease 0.4s;
-
-        padding-left: 200px;
-        padding-right: 200px;
-        transition : opacity 0.2s ease;
-
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-
-        a, a:hover {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        @media (max-width: 1000px) {
-            display: none;
-        }
-
-        i {
-            display: none;
-        }
-    }
-
-    &:hover {
-        h1 {
-            opacity: 1;
-        }
-    }
+    @include print( $header-map );
 }
 
-.book {
-    &.is-loading {
-        .book-header h1 {
-            i {
-                display: inline-block;
-            }
-            a {
-                display: none;
-            }
-        }
-    }
+//  *******************************************************
+//  ## Header buttons
+//  *******************************************************
+
+.book-header .btn
+{
+    display: block;
+    height: $header-height;
+    padding: 0px 15px;
+    border-bottom: none;
+    text-transform: uppercase;
+    line-height: $header-height;
+    box-shadow: none !important;
+    position:relative;
+    font-size: $font-size-base;
+
+    @include print( $header-button-map );
 }
+
+.book-header .btn:hover
+{
+    position: relative;
+    text-decoration: none;
+
+    @include print( $header-button-hover-map );
+}
+
+.book-header .btn:focus { outline: none; }
+
+//  *******************************************************
+//  ## The current page title
+//  *******************************************************
+
+// Permanently hides/shows the title in the header
+.book-header h1 { @if $header-show-title == false { display: none; } }
+
+.book-header h1
+{
+    margin: 0px;
+    text-align: center;
+    line-height: $header-height;
+    opacity: 0;
+    transition : opacity ease 0.4s;
+
+    padding-left: 200px;
+    padding-right: 200px;
+    transition : opacity 0.2s ease;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include print( $header-title-map );
+
+    @media (max-width: 1000px) { display: none; }
+}
+
+.book-header h1 a, 
+.book-header h1 a:hover
+{
+    color: inherit;
+    text-decoration: none;
+}
+
+.book-header h1 i { display: none; }
+
+.book-header:hover h1 { opacity: 1; }
+
+.book.is-loading .book-header h1 i { display: inline-block; }
+.book.is-loading .book-header h1 a { display: none; }

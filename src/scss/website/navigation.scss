@@ -2,41 +2,32 @@
     Right/Left buttons to change page
 */
 
-.navigation {
+// Shows/hide the left/right arrows
+@if $navigation-show == false { 
+    .navigation { display: none !important; } 
+}
+
+.navigation
+{
     position: absolute;
     top: $header-height;
     bottom: 0px;
     margin: 0;
-    max-width: 150px;
-    min-width: 90px;
+    
 
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
 
-    font-size: 40px;
-    color: $navigation-color;
-
     text-align: center;
+
+    @include print( $navigation-map );
 
     transition: all 350ms ease;
 
-    &:hover {
-        text-decoration: none;
-        color: $navigation-hover-color;
-    }
-
-    &.navigation-next {
-        right: 0px;
-    }
-    &.navigation-prev {
-        left: 0px;
-    }
-}
-
-@media (max-width: $mobileMaxWidth) {
-    .navigation {
+    @media (max-width: $mobileMaxWidth)
+    {
         position: static;
         top: auto;
         max-width: 50%;
@@ -44,10 +35,21 @@
         display: inline-block;
         float: left;
 
-        &.navigation-unique {
+        &.navigation-unique
+        {
             max-width: 100%;
             width: 100%;
         }
     }
 }
+
+.navigation:hover
+{
+    @include print( $navigation-hover-map );
+}
+
+.navigation.navigation-next { right: 0px; }
+.navigation.navigation-prev { left: 0px; }
+
+
 

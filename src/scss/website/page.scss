@@ -1,19 +1,33 @@
-.page-wrapper {
+//  #   Page
+//      Defines styles for the book's page
+
+
+//  *******************************************************
+//  ##  Page divs
+//  *******************************************************
+
+.page-wrapper
+{
     position: relative;
     outline: none;
+
+    @include print( $page-map );
 }
 
-.page-inner {
+.page-inner
+{
     position: relative;
-    max-width: 800px;
-    margin: 0px auto;
-    padding: 20px 15px 40px 15px;
 
-    .btn-group {
-        .btn {
-            border-radius: 0px;
-            background: #eee;
-            border: 0px;
-        }
-    }
+    @include print( $page-inner-map );
+}
+
+//  *******************************************************
+//  ##  Page elements
+//  *******************************************************
+
+.page-inner .btn-group .btn
+{
+    border-radius: 0px;
+    background: #eee;
+    border: 0px;
 }

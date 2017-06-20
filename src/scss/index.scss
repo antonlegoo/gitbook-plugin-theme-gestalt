@@ -2,28 +2,18 @@
 
 @import "../../node_modules/font-awesome/scss/font-awesome.scss"; 
 
-
-// Prints all CSS rules from a map
-@mixin print($map)
-{
-	@each $key, $value in $map { #{$key} : $value; }
-}
+@import "mixin";
+@import "website/variables";
 
 @import "normalize";
 @import "base";
 
-
-@import "mixin";
-@import "website/variables";
-@import "website/header";
-@import "website/dropdown";
-@import "website/summary";
-@import "website/body";
+@import "website/book";
 @import "website/page";
-@import "website/buttons";
+@import "website/header";
+@import "website/sidebar";
 @import "website/markup";
+@import "website/buttons";
 @import "website/navigation";
 @import "website/search";
-
-
-
+@import "website/dropdown";

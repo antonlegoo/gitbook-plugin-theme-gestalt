@@ -1,0 +1,72 @@
+// 	# 	Book
+// 		Defines styles for the book's body
+
+
+// 	*******************************************************
+// 	## 	Main book div
+// 	*******************************************************
+
+
+.book
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    @include print( $book-map );
+}
+
+.book.with-summary
+{
+    @media (max-width: $sidebar-breakpoint) { overflow: hidden; }
+}
+
+// 	*******************************************************
+// 	## 	Book wrappers and innerds
+// 	*******************************************************
+
+.book-body
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    overflow-y: auto;
+
+    transition: left $sidebar-transition-duration ease;
+
+    @include print( $book-body-map );
+
+    @media (max-width: $mobileMaxWidth)
+    {
+        transition: transform $sidebar-transition-duration ease;
+        padding-bottom: 20px;
+    }
+
+    .book.without-animation & { transition : none !important; }
+
+    .book.with-summary &
+    {
+        @media (max-width: $sidebar-breakpoint) { transform: translate( calc(100% - 60px), 0px ); }
+        @media (min-width: $sidebar-breakpoint) { left: $sidebar-width; }
+    }
+}
+
+.book-body .body-inner
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    overflow-y: auto;
+
+    @include print( $book-inner-map );
+
+    @media (max-width: $mobileMaxWidth)
+    {
+        position: static;
+        min-height: calc( 100% - 50px );
+    }
+}

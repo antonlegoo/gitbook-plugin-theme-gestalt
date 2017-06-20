@@ -1,8 +1,18 @@
-.dropdown {
+//  #   Dropdown        
+//      Defines styling for dropdowns
+
+
+//  *******************************************************
+//  ##  Dropdown div
+//  *******************************************************
+
+.dropdown
+{
     position: relative;
 }
 
-.dropdown-menu {
+.dropdown-menu
+{
     position: absolute;
     top: 100%;
     left: 0;
@@ -16,100 +26,107 @@
     font-size: $font-size-base;
     background-color: $dropdown-background;
     border: 1px solid $dropdown-border-color;
-    border-radius: $border-radius-base;
+    border-radius: $dropdown-border-radius;
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
     background-clip: padding-box;
+}
 
-    &.open{
-        display:block;
+.dropdown-menu.open { display:block; }
+
+.dropdown-menu.dropdown-left
+{
+    left: auto;
+    right: 4%;
+}
+
+.dropdown-menu.dropdown-left .dropdown-caret {
+    right: 14px;
+    left: auto;
+}
+
+//  *******************************************************
+//  ##  Dropdown caret
+//  *******************************************************
+
+.dropdown-caret
+{
+    position: absolute;
+    top: -8px;
+    left: 14px;
+    width: 18px;
+    height: 10px;
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-caret .caret-outer
+{
+    position: absolute;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid rgba(0,0,0,0.1);
+    height: auto;
+    left: 0;
+    top: 0;
+    width: auto;
+    display: inline-block;
+    margin-left: -1px;
+}
+
+.dropdown-caret .caret-inner
+{
+    position: absolute;
+    display: inline-block;
+    margin-top: -1px;
+    top: 0;
+    top: 1px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid $dropdown-background;
+}
+
+//  *******************************************************
+//  ##  Dropdown buttons
+//  *******************************************************
+
+.dropdown .buttons
+{
+    border-bottom: 1px solid $color-border;
+
+    /* Clear fix */
+    &:before,
+    &:after
+    {
+        content: " ";
+        display: table;
     }
-
-    &.dropdown-left {
-        left: auto;
-        right: 4%;
-
-        .dropdown-caret {
-            right: 14px;
-            left: auto;
-        }
-    }
-
-    .dropdown-caret{
-        position: absolute;
-        top: -8px;
-        left: 14px;
-        width: 18px;
-        height: 10px;
-        float: left;
-        overflow: hidden;
-
-        .caret-outer{
-            position: absolute;
-            border-left: 9px solid transparent;
-            border-right: 9px solid transparent;
-            border-bottom: 9px solid rgba(0,0,0,0.1);
-            height: auto;
-            left: 0;
-            top: 0;
-            width: auto;
-            display: inline-block;
-            margin-left: -1px;
-        }
-        .caret-inner{
-            position: absolute;
-            display: inline-block;
-            margin-top: -1px;
-            top: 0;
-            top: 1px;
-            border-left: 9px solid transparent;
-            border-right: 9px solid transparent;
-            border-bottom: 9px solid $dropdown-background;
-        }
-    }
-
-    .buttons {
-
-        /* Clear fix */
-        &:before,
-        &:after {
-            content: " ";
-            display: table;
-        }
-        &:after {
-           clear: both;
-        }
-
-        border-bottom: 1px solid $color-border;
-
-        &:last-child {
-            border-bottom: none;
-        }
-
-        .button {
-            border: 0;
-            background-color: transparent;
-            color: $dropdown-button-color;
-            width: 100%;
-            text-align: center;
-            float: left;
-            line-height: $line-height-base;
-            padding: 8px 4px;
-
-            &:hover {
-                color: $dropdown-button-hover-color;
-            }
-
-            &:focus, &:hover {
-                outline: none;
-            }
-
-            &.size-2 {
-                width: 50%;
-            }
-
-            &.size-3 {
-                width: 33%;
-            }
-        }
+    &:after
+    {
+       clear: both;
     }
 }
+   
+.dropdown .buttons:last-child { border-bottom: none; }
+
+.dropdown .button 
+{
+    border: 0;
+    background-color: transparent;
+    color: $dropdown-button-color;
+    width: 100%;
+    text-align: center;
+    float: left;
+    line-height: $line-height-base;
+    padding: 8px 4px;
+}
+
+.dropdown .button:hover { color: $dropdown-button-hover-color; }
+
+.dropdown .button:focus, 
+.dropdown .button:hover
+{
+    outline: none;
+}
+
+.dropdown .button.size-2 { width: 50%; }
+.dropdown .button.size-3 { width: 33%; }

@@ -1,8 +1,12 @@
+//  #   Base
+//      Defines styles for basic elements
+
 //	*******************************************************
-// 	From default less
+// 	## HTML and BODY
 //	*******************************************************
 
-* {
+*
+{
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
     -webkit-tap-highlight-color: transparent;
@@ -11,25 +15,19 @@
     -webkit-font-smoothing: antialiased;
 }
 
-a {
-    text-decoration: none;
+html, body
+{ 
+    height: 100%; 
+    font-size: $font-size-base;
 }
 
-html, body {
-    height: 100%;
-}
+html {}
 
-html {
-    font-size: 62.5%;
-}
-
-body {
+body
+{
     text-rendering: optimizeLegibility;
     font-smoothing: antialiased;
-    // font-family: @font-family-base;
-    // font-size: @font-size-base;
-    font-size: 14px;
-    letter-spacing: .2px;
+    font-family: $font-family-base;
 
     text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -37,5 +35,16 @@ body {
 }
 
 //	*******************************************************
-// 	From default less
+// 	## Text
 //	*******************************************************
+
+a { @include print( $link-map ); }
+a:hover { @include print( $link-hover-map ); }
+
+//  ### Defintions for font sizes controlled by "Font Settings" dropdown in header
+
+.book.font-size-0 .book-body .page-inner section { font-size: $font-size-0; }
+.book.font-size-1 .book-body .page-inner section { font-size: $font-size-1; }
+.book.font-size-2 .book-body .page-inner section { font-size: $font-size-2; }
+.book.font-size-3 .book-body .page-inner section { font-size: $font-size-3; }
+.book.font-size-4 .book-body .page-inner section { font-size: $font-size-4; }
