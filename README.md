@@ -30,8 +30,10 @@ Below are the theme options available for Gestalt.
 "pluginsConfig": {
 	"theme-gestalt": {
 	    "logo": "/assets/logo.png",			// path to the logo file to use in the sidebar
-	    "favicon": "/assets/favicon.png",	// path to your favicon
-	    "excludeDefaultStyles": true		// excludes the pre-compiled theme css in favor of your custom css
+	    "favicon": "/assets/favicon.png",		// path to your favicon
+	    "baseURL": null,				// sets the base url in the HTML head
+	    "excludeDefaultStyles": true,		// excludes the pre-compiled theme css in favor of your custom css
+	    "doNotHideChildrenChapters" : false		// in summary, disables hiding of child chapters for inactive chapter
 	}
 }
 ```
