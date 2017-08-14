@@ -12,6 +12,10 @@
     {% else %}
         <link rel="shortcut icon" href="{{ "images/favicon.ico"|resolveAsset }}" type="image/x-icon">
     {% endif %}
+    {### Adds base url from user config ###}
+    {% if config.pluginsConfig["theme-gestalt"].baseUrl %}
+        <base href="{{ config.pluginsConfig["theme-gestalt"].baseUrl }}">
+    {% endif %}
 {% endblock %}
 
 {% block style %}
