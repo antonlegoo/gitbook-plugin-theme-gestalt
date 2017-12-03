@@ -15,7 +15,7 @@ var path        = require('path');
     ## Copy over files
 */
 
-gulp.task( "copy", function() {
+gulp.task( "copy", function(done) {
 
     // Copy over stuff
 
@@ -23,15 +23,15 @@ gulp.task( "copy", function() {
     .pipe( gulp.dest("_assets/website/fonts/fontawesome/") )
     ;
 
-    var img = gulp.src( ["node_modules/gitbook-logos/output/favicon.ico"] )
-    .pipe( gulp.dest("_assets/website/images/") )
+    var img = gulp.dest("_assets/website/images/")
     ;
 
     var merged = merge( fonts, img );
     // merged.add(js);
 
 
-    return merged;
+    // return merged;
+    done();
 
 });
 
